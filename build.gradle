@@ -6,6 +6,7 @@ version = project.mod_version
 group = project.maven_group
 
 dependencies {
+    // Purana 'compile' hata kar ab 'minecraft' aur 'modImplementation' use hota hai
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
