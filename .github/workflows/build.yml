@@ -9,12 +9,13 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: build
+      - name: Build
         run: |
           chmod +x gradlew
           ./gradlew build
       - uses: actions/upload-artifact@v3
         with:
-          name: BeastRender-Final
+          name: BeastRender-Mod
           path: build/libs/*.jar
+
 
