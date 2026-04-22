@@ -1,21 +1,26 @@
 name: build
-on: [push, pull_request]
+on: [pull_request, push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-    - name: Permission
-      run: chmod +x gradlew
-    - name: Build
-      run: ./gradlew build
-    - name: Upload
-      uses: actions/upload-artifact@v3
-      with:
-        name: BeastRender-JAR
-        path: build/libs/*.jar
+      - name: checkout repository
+        uses: actions/checkout@v3
+
+      - name: setup jdk 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'microsoft'
+
+      - name: make gradle executable
+        run: chmod +x gradlew
+
+      - name: build jar
+        run: ./gradlew build
+
+      - name: upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: BeastRender-Mod
+          path: build/libs/*.jar
