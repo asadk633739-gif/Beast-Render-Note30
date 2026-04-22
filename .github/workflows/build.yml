@@ -23,4 +23,3 @@ jobs:
 ........with:
 ..........name: BeastRender-Mod
 ..........path: build/libs/*.jar
-
